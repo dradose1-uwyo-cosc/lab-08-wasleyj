@@ -46,6 +46,46 @@ print("*" * 75)
 # Remember all inputs are strings, but the function needs ints or floats
 # Call your function and print the resulting list
 
+def slope_intercept(m,b,lx,ux):
+    """y=mx+b lx=lower x ux=upper x"""
+    y=[]
+    try:
+        int(lx)
+        int(ux)
+    except:
+        print("you can only input integers for upper and lower bounds")
+    else:
+        for x in range(int(lx),int(ux)+1):
+            y.append(int(m)*x+int(b))
+        return(y)
+
+print(slope_intercept(5,10,0,10))
+while True:
+    a=0
+    b=0
+    lb=0
+    ub=0
+    print("enter q to quit at any time")
+    a=input("please insert a number for m (the slope):\n")
+    if a=="q":
+        break
+    else:
+        b=input("please insert a number for b (the intercept):\n")
+        if b=="q":
+            break
+        else:
+            lb=input("please insert a integer number for lx (the lower bound):\n")
+            if lb=="q":
+                break
+            else:
+                ub=input("please insert a integer number for ux (the upper bound bound):\n")
+                if ub=="q":
+                    break
+                else:
+                    print(slope_intercept(a,b,lb,ub))
+                    print(slope_intercept(5,10,0,10))
+                    print([a,b,lb,ub])
+
 print("*" * 75)
 
 
