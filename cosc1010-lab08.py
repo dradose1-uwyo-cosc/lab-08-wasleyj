@@ -1,8 +1,8 @@
-# Your Name Here
+# Wesley Jones
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section:
+# 11/04/24
+# Lab 8
+# Lab Section: 14
 # Sources, people worked with, help given to:
 # your
 # comments
@@ -13,7 +13,15 @@
 # If they can't be converted return false
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
-
+def check_num(input_string):
+    try:
+        output=int(input_string)
+    except:
+        try:
+            output=float(input_string)
+        except:
+            print("this is not a valid interger or float.")
+    return(output)    
 
 print("*" * 75)
 
