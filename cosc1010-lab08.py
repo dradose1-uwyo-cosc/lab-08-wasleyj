@@ -59,7 +59,7 @@ def slope_intercept(m,b,lx,ux):
             y.append(int(m)*x+int(b))
         return(y)
 
-print(slope_intercept(5,10,0,10))
+#print(slope_intercept(5,10,0,10))
 while True:
     a=0
     b=0
@@ -83,8 +83,7 @@ while True:
                     break
                 else:
                     print(slope_intercept(a,b,lb,ub))
-                    print(slope_intercept(5,10,0,10))
-                    print([a,b,lb,ub])
+
 
 print("*" * 75)
 
@@ -96,3 +95,37 @@ print("*" * 75)
 # Create a loop like above to prompt the user for input for the three values
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
+print("We are now going to slove the quadratic formula!\n(enter q to quit at any time)\n")
+
+def sqrt(s):
+    if s < 0:
+        return("null")
+    w=s**0.5
+    return(w)
+
+def quad_form(a,b,c):
+    try:
+        int(a) and int(b) and int(b)
+    except:
+        print("You did not enter numbers!")
+    else:
+        if (int(b)**2)-4*int(a)*int(c) < 0:
+            print("*" * 75)
+            print("You cant take the square root of a negative!")
+            print("*" * 75)
+        x1=(-int(b)+sqrt((int(b)**2)-4*int(a)*int(c)))/2*int(a)
+        x2=(-int(b)-sqrt((int(b)**2)-4*int(a)*int(c)))/2*int(a)
+        return(x1,x2)
+    
+while True:
+    "enter q to quit this function"
+    a=input("insert a number to assign to the variable a:\n")
+    if a=="q":
+        break
+    b=input("insert a number to assign to the variable b:\n")
+    if b=="q":
+        break
+    c=input("insert a number to assign to the variable c:\n")
+    if c=="q":
+        break
+    print(f"Your Answers are:\n{quad_form(a,b,c)}")
